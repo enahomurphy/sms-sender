@@ -9,6 +9,8 @@ const request = new Supertest(server)
 describe('Test', () => {
   const infoBipURL = 'https://api.infobip.com'
 
+  after(() => server.close())
+
   describe('Error', () => {
     before(() => {
       nock(infoBipURL)
@@ -91,7 +93,7 @@ describe('Test', () => {
         })
     })
 
-    it('should return 422 and errors of length 3 of no field is passed', (done) => {
+    it('should return 422 and errors of length 3 if no field is passed', (done) => {
       request
         .post('/api/v1/send')
         .send({})
