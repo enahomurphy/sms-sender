@@ -17,13 +17,22 @@
    </div>
     <h1>Simple Sms Sender</h1>
     <p>Send sms to friends family and love ones <br> around the globe for free</p>
-    <form>
-      <input type="text" placeholder="Name">
-      <input type="number" placeholder="Phone">
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+    <div id="message"></div>
+    <form id="form">
+      <div class="form-group">
+          <input type="text" placeholder="Name" name="name">
+      </div>
+      <div class="form-group">
+        <input type="number" placeholder="(234) 909935012" name="phone">
+      </div>
+      <div class="form-group">
+        <textarea rows="5" name="message" placeholder="Enter you text message"></textarea>
+      </div>
       <button type="submit">Send</button>
     </form>
   </div>
+
+  <script src="/js/script.js"></script>
 </body>
 
 </html>

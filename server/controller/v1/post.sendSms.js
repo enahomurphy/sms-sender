@@ -81,7 +81,8 @@ const handler = async (req, res) => {
         .status(err.status)
         .send({ 
           message: err.message,
-          errors: err.errors
+          errors: err.errors,
+          status: err.status
         })
     }
     res
