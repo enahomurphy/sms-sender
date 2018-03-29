@@ -16,8 +16,8 @@ to use simple sms sender all you need are your login details for infobib.
 - create a .env file from the .env-example
 - fill in your infobib details
 ```
-INFO_BIB_USERNAME='golden_bunch'
-INFO_BIB_PASSWORD='123@bunc'
+INFO_BIB_USERNAME='test_username'
+INFO_BIB_PASSWORD='test_password'
 ```
 - run `npm install`
 - run `npm start`
