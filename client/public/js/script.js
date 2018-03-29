@@ -18,6 +18,15 @@ const disableInputs = (state = true) => {
     }
   );
 }
+// clears all input
+const clearInputs = (state = true) => {
+  Array.prototype.forEach.call(
+    form.querySelectorAll(
+      "input, textarea, button"
+    ),
+    input => input.value = ''
+  );
+}
 
 // gets form input by name
 const getFormInput = (name) => {
@@ -56,7 +65,6 @@ const clearError = (name) => {
 const sending = (state = true) => {
   button = form.querySelector('button')
   if (!state) {
-    console.log('state')
     return button.innerHTML = 'send'
   }
   const img = document.createElement('img')
@@ -99,9 +107,9 @@ const sendMessage = async (body) => {
   }
   else if (response.status === 500) {
     showMessage(data.message, 'failure')
-  } else {
+  } else if (response.status === 200) {
     showMessage(data.message, 'success')
-    disableInputs(false)
+    clearInputs()
   }
 
   sending(false)
