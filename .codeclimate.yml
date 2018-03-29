@@ -1,0 +1,14 @@
+engines:
+  eslint:
+    enabled: true
+  duplication:
+    enabled: false
+    config:
+      languages:
+      - javascript
+      - node
+ratings:
+  paths:
+  - "server/**"
+exclude_paths:
+- client/
