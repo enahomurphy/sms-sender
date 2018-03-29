@@ -53,12 +53,16 @@ const clearError = (name) => {
 
 // updates the submit form when sending sms
 // shows a loading icon
-const sending = () => {
+const sending = (state = true) => {
+  button = form.querySelector('button')
+  if (!state) {
+    console.log('state')
+    return button.innerHTML = 'send'
+  }
   const img = document.createElement('img')
   img.setAttribute('src', '/img/loading.gif')
   img.setAttribute('alt', 'loading')
   img.setAttribute('class', 'loading')
-  button = form.querySelector('button')
   button.innerHTML = ''
   button.appendChild(img)
 }
@@ -99,6 +103,9 @@ const sendMessage = async (body) => {
     showMessage(data.message, 'success')
     disableInputs(false)
   }
+
+  sending(false)
+  disableInputs(false)
 }
 
 // handles the form submit event
