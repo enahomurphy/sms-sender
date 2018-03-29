@@ -58,11 +58,12 @@ body {
   color: #176eb7
 }
 
-form > input,
-form > textarea,
-form > button {
+form input,
+form textarea,
+form button {
   display: block;
-  margin: 10px auto;
+  margin: 0px auto;
+  margin-bottom: 10px;
   width: 300px;
 }
 
@@ -76,11 +77,11 @@ form input {
 }
 
 form input:focus,
-form > textarea:focus {
+form textarea:focus {
   outline: none
 }
 
-form > textarea {
+form textarea {
   border-radius: 20px;
   border: 1px solid #efeff9;
   padding-left: 10px;
@@ -101,7 +102,42 @@ form > button {
   box-shadow: 0px 18px 50px -1px rgba(214,214,214,1);
 }
 
+form input:disabled,
+form input['diabled'] {
+  background-color: #b94848 !important;
+}
+
 form > button:focus {
   outline: none;
   box-shadow: none
+}
+
+.error {
+  margin-left: 100px;
+  color: #ff8181;
+  font: 200 12px/20px 'Lato', sans-serif;
+}
+
+.form-error {
+  background-color: #f9c9c9;
+}
+
+#message {
+  margin: 10px auto;
+  color: #fff;
+  text-align: center;
+  font: 400 14px/26px 'Lato', sans-serif;  width: 300px;
+  margin-bottom: 10px;
+} 
+
+.message-success {
+  background-color: #5bad5b;
+}
+
+.message-failure {
+  background-color: #ad5b5b;
+}
+
+.loading {
+  height: 30px;
 }
